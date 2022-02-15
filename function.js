@@ -76,131 +76,78 @@ removeHtmlElement() фүнкцийг дуудаж index.html доторох
 
 */
 
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
+function generateHtmlElement(value) {
+  let div = document.querySelector("#mainNews");
+  let card = document.createElement("div");
+  let newImg = document.createElement("img");
+  newImg.setAttribute("src", value.pic_url);
+  card.setAttribute("class", "singleNews");
+  card.appendChild(newImg);
+  let h2 = document.createElement("h2");
+  h2.innerText = value.title;
+  card.appendChild(h2);
+  div.appendChild(card);
+}
+
+let filteredArr = news.filter((e) => {
+  return e.type === "улс төр";
+});
+
+document.querySelector("#btn_politics").addEventListener("click", () => {
+  filteredArr.forEach((e) => {
+    generateHtmlElement(e);
   });
 });
 
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[0].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
+let filteredArr1 = news.filter((e) => {
+  return e.type === "спорт";
+});
 
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
+document.querySelector("#btn_sport").addEventListener("click", () => {
+  filteredArr1.forEach((e) => {
+    generateHtmlElement(e);
   });
 });
 
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[1].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
+let filteredArr2 = news.sort((e1, e2) => {
+  if (e1 > e2) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
 
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
+document.querySelector("#btn_sport").addEventListener("click", () => {
+  filteredArr1.forEach((e) => {
+    generateHtmlElement(e);
   });
 });
 
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[2].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
+// let filteredArr2 = news.filter((e) => {
+//   return e.type === "allnews";
+// });
 
-mainDiv.appendChild(newImg);
+// document.querySelector("#btn_allnews").addEventListener("click", () => {
+//   filteredArr2.forEach((e) => {
+//     generateHtmlElement(e);
+//   });
+// });
 
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
+// mainDiv.appendChild(newImg);
 
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[3].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
+// let button = document.querySelector(".btn");
+// button.addEventListener("click", () => {
+//   let filteredArr = news.filter((e) => {
+//     return e.type === "улс төр";
+//   });
+// });
 
-mainDiv.appendChild(newImg);
+// let newImg = document.createElement("img");
+// newImg.setAttribute("src", news[1].pic_url);
+// newImg.setAttribute(".", "singleNews");
+// let mainDiv = document.querySelector("#mainNews");
 
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
-
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[4].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
-
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
-
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[5].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
-
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
-
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[6].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
-
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
-
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[7].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
-
-mainDiv.appendChild(newImg);
-
-let button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  let filteredArr = news.filter((e) => {
-    return e.type === "улс төр";
-  });
-});
-
-let newImg = document.createElement("img");
-newImg.setAttribute("src", news[8].pic_url);
-newImg.setAttribute(".", "singleNews");
-let mainDiv = document.querySelector("#mainNews");
-
-mainDiv.appendChild(newImg);
+// mainDiv.appendChild(newImg);
 
 {
   /* <div class="singleNews">
