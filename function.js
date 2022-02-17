@@ -62,11 +62,11 @@ const news = [
 ];
 //энд generateHtmlElement() фүнкцийг бич!
 
-// const element = document.createElement("");
+function generateHtmlElement(value) {}
 
 //энд removeHtmlElement() фүнкцийг бич!
 
-// document.querySelector("").remove();
+document.querySelector("").remove();
 
 /*
 энд 5н button-оо барьж аваад addEventListener хииж 
@@ -110,56 +110,34 @@ document.querySelector("#btn_sport").addEventListener("click", () => {
 });
 
 let filteredArr2 = news.sort((e1, e2) => {
-  if (e1 > e2) {
+  if (e1.date > e2.date) {
     return -1;
   } else {
     return 1;
   }
 });
 
-document.querySelector("#btn_sport").addEventListener("click", () => {
-  filteredArr1.forEach((e) => {
+document.querySelector("#btn_sortup").addEventListener("click", () => {
+  filteredArr2.forEach((e) => {
     generateHtmlElement(e);
   });
 });
 
-// let filteredArr2 = news.filter((e) => {
-//   return e.type === "allnews";
-// });
+let filteredArr3 = news.sort((e1, e2) => {
+  if (e1.date > e2.date) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
 
-// document.querySelector("#btn_allnews").addEventListener("click", () => {
-//   filteredArr2.forEach((e) => {
-//     generateHtmlElement(e);
-//   });
-// });
+document.querySelector("#btn_sortdown").addEventListener("click", () => {
+  filteredArr3.forEach((e) => {
+    generateHtmlElement(e);
+  });
+});
 
-// mainDiv.appendChild(newImg);
-
-// let button = document.querySelector(".btn");
-// button.addEventListener("click", () => {
-//   let filteredArr = news.filter((e) => {
-//     return e.type === "улс төр";
-//   });
-// });
-
-// let newImg = document.createElement("img");
-// newImg.setAttribute("src", news[1].pic_url);
-// newImg.setAttribute(".", "singleNews");
-// let mainDiv = document.querySelector("#mainNews");
-
-// mainDiv.appendChild(newImg);
-
-{
-  /* <div class="singleNews">
-      <h2>Хавар эхлэх бүтээн байгуулалтууд</h2>
-      <img src="https://news.mn/wp-content/uploads/2022/02/zam.jpg" alt="">
-    </div> */
-}
-
-// let card1 = document.createElement("card");
-// card1.setAttribute("style", singleNews);
-
-// let elementsToDelete = document.querySelectorAll(".singleNews");
-// elementsToDelete.forEach((e) => {
-//   e.remove();
-// });
+let elementsToDelete = document.querySelectorAll("#mainNews");
+elementsToDelete.forEach((e) => {
+  e.remove();
+});
